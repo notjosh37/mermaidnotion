@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mermaid Diagram</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+  <style>
+    body { margin: 0; padding: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="mermaid">
+```mermaid
+graph TD
+  classDef followup fill:#d0e2ff,stroke:#0366d6,stroke-width:2px;
+  classDef waiting fill:#fff5d1,stroke:#ffb000,stroke-width:2px;
+
+  A[Gabriel Lameira de Almeida] -->|Connected To| B[Reagan Leung]
+  A -->|Connected To| C[Richard Yu]
+  A -->|Connected To| D[Jonathan Li]
+  A -->|Connected To| E[David Chen]
+  A -->|Action| F[Follow up]
+  
+  B -->|Connected To| G[Yik Khai]
+  B -->|Connected To| H[Chris Neumann]
+  B -->|Action| I[Waiting response]
+  
+  C -->|Connected To| J[John Westworth]
+  C -->|Connected To| K[Jef Guo]
+  C -->|Action| L[Waiting response]
+  
+  D -->|Connected To| M[Dominic Lau]
+  D -->|Action| N[Waiting response]
+  
+  E -->|Connected To| O[Max dragon]
+  E -->|Action| P[Follow up]
+  
+  F -->|Connected To| Q[Yui Mikuriya]
+  F -->|Connected To| R[Trisha Iamsakun]
+  F -->|Connected To| S[Marc Andrew]
+  F -->|Action| T[Follow up]
+  
+  G -->|Connected To| U[Ethan Harvey]
+  G -->|Connected To| V[Finlay McInnes]
+  
+  H -->|Connected To| W[Sean Brennan]
+  
+  I -->|Connected To| X[Jackson Thomas]
+  
+  J -->|Connected To| Y[Darrell Kopke]
+  
+  K -->|Connected To| Z[Kai Smart]
+  
+  L -->|Connected To| AA[Jason Peter Andrews]
+  
+  M -->|Action| AB[n/a]
+  
+  N -->|Action| AC[n/a]
+  
+  O -->|Action| AD[Follow up]
+  
+  P -->|Action| AE[n/a]
+  
+  Q -->|From| AF[From Eprojects page]
+  
+  R -->|From| AG[From Eprojects page]
+  
+  S -->|From| AH[Bumped into him at a e projects boothing]
+  
+  T -->|From| AI[From that one UBC eprojects event]
+  
+  U -->|From| AJ[Gave talk about VC via ripple VC]
+  
+  V -->|From| AK[Frat, knows penny. Played golf]
+  
+  W -->|From| AL[BCC]
+  
+  X -->|From| AM[Dad’s friend]
+  
+  Y -->|From| AN[Frat]
+  
+  Z -->|From| AO[Donald’s son]
+  
+  AA -->|From| AP[From finlay]
+  
+  AB -->|From| AQ[Many guys in the frat]
+  
+  AC -->|From| AR[Ethan referred]
+  
+  AD -->|From| AS[Frat]
+  
+  AE -->|From| AT[Random from linked in]
+```
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const enableZoom = () => {
+        const svg = document.querySelector(".mermaid svg");
+        if (svg && !svg.getAttribute("data-panzoom")) {
+          svgPanZoom(svg, {
+            zoomEnabled: true,
+            controlIconsEnabled: true,
+            fit: true,
+            center: true
+          });
+        } else {
+          setTimeout(enableZoom, 100); // keep retrying until SVG loads
+        }
+      };
+      enableZoom();
+    });
+  </script>
+</body>
+</html>
