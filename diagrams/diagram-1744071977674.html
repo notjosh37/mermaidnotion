@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mermaid Diagram</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+  <style>
+    body { margin: 0; padding: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="mermaid">
+graph TD
+  classDef followup fill:#d0e2ff,stroke:#0366d6,stroke-width:2px;
+  classDef waiting fill:#fff5d1,stroke:#ffb000,stroke-width:2px;
+
+  A1["Gabriel Lameira de Almeida\nUni: UBC\nJob: Mkinsey\nFrom: Eprojects page\nAction: Follow up"]
+  A2["Reagan Leung\nUni: UBC\nJob: SCI\nFrom: E-Projects\nAction: Waiting response"]
+  A3["Richard Yu\nUni: UBC\nJob: VC @ Front Row Ventures\nFrom: Bumped into him at a e projects boothing\nAction: Waiting response"]
+  A4["Jonathan Li\nUni: UBC\nJob: E-Projects\nFrom: Harvey made an introduction\nAction: Waiting response"]
+  A5["David Chen\nUni: UBC\nJob: SCI\nFrom: From that one UBC eprojects event\nAction: Waiting response"]
+  A6["Yik Khai\nUni: UBC\nJob: VC\nFrom: Gave talk about VC via ripple VC\nAction: Follow up"]
+  A7["Chris Neumann\nUni: UBC\nJob: Microsoft\nFrom: Frat, knows penny. Played golf\nAction: n/a"]
+  A8["John Westworth\nUni: UBC\nJob: n/a\nFrom: Dad’s friend\nAction: Follow up"]
+  A9["Jef Guo\nUni: UBC\nJob: n/a\nFrom: Donald’s son\nAction: Follow up"]
+  A10["Dominic Lau\nUni: UBC\nJob: n/a\nFrom: From finlay\nAction: n/a"]
+  A11["Max dragon\nUni: UBC\nJob: n/a\nFrom: Many guys in the frat\nAction: Waiting response"]
+  A12["Yui Mikuriya\nUni: UBC\nJob: n/a\nFrom: Ethan referred\nAction: Follow up"]
+  A13["Trisha Iamsakun\nUni: Stanford\nJob: n/a\nFrom: Random from linked in\nAction: Follow up"]
+  A14["Marc Andrew\nUni: SFU\nJob: n/a\nFrom: n/a\nAction: n/a"]
+  A15["Ethan Harvey\nUni: UBC\nJob: n/a\nFrom: n/a\nAction: n/a"]
+  A16["Finlay McInnes\nUni: LSE\nJob: n/a\nFrom: n/a\nAction: n/a"]
+  A17["Sean Brennan\nUni: Queens\nJob: n/a\nFrom: n/a\nAction: n/a"]
+  A18["Jackson Thomas\nUni: UBC\nJob: n/a\nFrom: n/a\nAction: n/a"]
+  A19["Darrell Kopke\nUni: UBC\nJob: n/a\nFrom: n/a\nAction: n/a"]
+  A20["Kai Smart\nUni: UBC\nJob: n/a\nFrom: n/a\nAction: n/a"]
+  A21["Jason Peter Andrews\nUni: UBC\nJob: n/a\nFrom: n/a\nAction: n/a"]
+
+  A1 --> A2
+  A1 --> A3
+  A1 --> A4
+  A2 --> A5
+  A2 --> A6
+  A3 --> A6
+  A4 --> A11
+  A4 --> A12
+  A6 --> A7
+  A8 --> A9
+  A8 --> A10
+  A9 --> A11
+  A10 --> A12
+  A12 --> A13
+  A13 --> A14
+  A14 --> A15
+  A15 --> A16
+  A16 --> A17
+  A17 --> A18
+  A18 --> A19
+  A19 --> A20
+  A20 --> A21
+
+  class A1 followup;
+  class A2 waiting;
+  class A3 waiting;
+  class A4 waiting;
+  class A5 waiting;
+  class A6 followup;
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const enableZoom = () => {
+        const svg = document.querySelector(".mermaid svg");
+        if (svg && !svg.getAttribute("data-panzoom")) {
+          svgPanZoom(svg, {
+            zoomEnabled: true,
+            controlIconsEnabled: true,
+            fit: true,
+            center: true
+          });
+        } else {
+          setTimeout(enableZoom, 100);
+        }
+      };
+      enableZoom();
+    });
+  </script>
+</body>
+</html>
