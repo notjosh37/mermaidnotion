@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mermaid Diagram</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+  <style>
+    body { margin: 0; padding: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="mermaid">
+graph TD
+  classDef followup fill:#d0e2ff,stroke:#0366d6,stroke-width:2px;
+  classDef waiting fill:#fff5d1,stroke:#ffb000,stroke-width:2px;
+
+  A[Gabriel Lameira de Almeida] -->|From Eprojects page| B[Reagan Leung]
+  A -->|From Eprojects page| C[Richard Yu]
+  A -->|From finlay| D[Jonathan Li]
+  A -->|From linked in| E[David Chen]
+  
+  B -->|works at CDL| F[Yik Khai]
+  C -->|Gave talk about VC via ripple VC| G[Chris Neumann]
+  D -->|Many guys in the frat| H[John Westworth]
+  
+  E -->|From that one UBC eprojects event| I[Jef Guo]
+  
+  F -->|Frat, knows penny. Played golf| J[Dominic Lau]
+  G -->|Bumped into him at a e projects boothing| K[Max dragon]
+  H -->|Frat, Donald’s son| L[Yui Mikuriya]
+
+  I -->|E-Projects| M[Trisha Iamsakun]
+  J -->|Random from linked in| N[Marc Andrew]
+  K -->|He is the MD at SCI| O[Ethan Harvey]
+  
+  L -->|From finlay| P[Finlay McInnes]
+  
+  M -->|VC @ Front Row Ventures| Q[Sean Brennan]
+  N -->|Waiting response| R[Jackson Thomas]
+  O -->|From EProjects page| S[Darrell Kopke]
+  
+  P -->|n/a| T[Kai Smart]
+  
+  Q -->|Follow up| U[Jason Peter Andrews]
+  R -->|n/a| V[Mkinsey]
+  
+  S -->|Waiting response| W[n/a]
+  T -->|Waiting response| X[n/a]
+  
+  U -->|Follow up| Y[n/a]
+  V -->|Follow up| Z[n/a]
+  
+  X -->|n/n| AA[n/a]
+  Y -->|n/n| AB[n/n]
+  Z -->|n/n| AC[n/n]
+
+  class B,C,D,E followup;
+  class F,G,H,I waiting;
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const enableZoom = () => {
+        const svg = document.querySelector(".mermaid svg");
+        if (svg && !svg.getAttribute("data-panzoom")) {
+          svgPanZoom(svg, {
+            zoomEnabled: true,
+            controlIconsEnabled: true,
+            fit: true,
+            center: true
+          });
+        } else {
+          setTimeout(enableZoom, 100);
+        }
+      };
+      enableZoom();
+    });
+  </script>
+</body>
+</html>
