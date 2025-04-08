@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mermaid Diagram</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+  <style>
+    body { margin: 0; padding: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="mermaid">
+```mermaid
+graph TD
+  classDef followup fill:#d0e2ff,stroke:#0366d6,stroke-width:2px;
+  classDef waiting fill:#fff5d1,stroke:#ffb000,stroke-width:2px;
+
+  A[Gabriel Lameira de Almeida] -->|From: Eprojects page| B(From: Eprojects page);
+  A -->|Follow-up Status: Follow up| C(Job: Mkinsey);
+  
+  D[Reagan Leung] -->|From: Harvey made an introduction| B;
+  D -->|Follow-up Status: Waiting response| C;
+  
+  E[Richard Yu] -->|From: works at CDL| B;
+  E -->|Follow-up Status: Waiting response| C;
+  
+  F[Jonathan Li] -->|From: that one UBC eprojects event| B;
+  F -->|Follow-up Status: Waiting response| C;
+  
+  G[David Chen] -->|From: Carson Lecky| B;
+  G -->|Follow-up Status: n| C;
+  
+  H[Yik Khai] -->|From: Dad’s friend| B;
+  H -->|Follow-up Status: n| C;
+  
+  I[Chris Neumann] -->|From: frat, knows penny| B;
+  I -->|Follow-up Status: Follow up| C;
+  
+  J[John Westworth] -->|From: Played golf| B;
+  J -->|Follow-up Status: Follow up| C;
+
+  K[Jef Guo] -->|From: Frat| B;
+  K -->|Follow-up Status: Follow up| C;
+  
+  L[Dominic Lau] -->|From: Donald’s son| B;
+  L -->|Follow-up Status: n| C;
+  
+  M[Max Dragon] -->|From: From Finlay| B;
+  M -->|Follow-up Status: n| C;
+
+  N[Yui Mikuriya] -->|From: Many guys in the frat| B;
+  N -->|Follow-up Status: Follow up| C;
+
+  O[Trisha Iamsakun] -->|From: Random from LinkedIn| B;
+  O -->|Follow-up Status: n| C;
+
+  P[Marc Andrew] -->|From: SCI| B;
+  P -->|Follow-up Status: n| C;
+
+  Q[Ethan Harvey] -->|From: E-Projects| B;
+  Q -->|Follow-up Status: Follow up| C;
+
+  R[Finlay McInnes] -->|From: VC @ Front Row Ventures| B;
+  R -->|Follow-up Status: Follow up| C;
+
+  S[Sean Brennan] -->|From: Microsoft| B;
+  S -->|Follow-up Status: n| C;
+
+  T[Jackson Thomas] -->|From: UBC| B;
+  T -->|Follow-up Status: n| C;
+
+  U[Darrell Kopke] -->|From: UBC| B;
+  U -->|Follow-up Status: n| C;
+
+  V[Kai Smart] -->|From: UBC| B;
+  V -->|Follow-up Status: n| C;
+
+  W[Jason Peter Andrews] -->|From: UBC| B;
+  W -->|Follow-up Status: n| C;
+
+  X[Mkinsey] -->|From: n/a| B;
+  X -->|Waiting response| C;
+
+  Y[University Nodes]
+  Y --> UBC;
+  Y --> Stanford;
+  Y --> SFU;
+  Y --> LSE;
+  Y --> Queens;
+```
+  </div>
+</body>
+</html>
