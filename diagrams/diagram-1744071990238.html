@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mermaid Diagram</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+  <style>
+    body { margin: 0; padding: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="mermaid">
+graph TD
+  classDef followup fill:#d0e2ff,stroke:#0366d6,stroke-width:2px;
+  classDef waiting fill:#fff5d1,stroke:#ffb000,stroke-width:2px;
+
+  A1[Gabriel Lameira de Almeida]
+  A2[Reagan Leung]
+  A3[Richard Yu]
+  A4[Jonathan Li]
+  A5[David Chen]
+  A6[Yik Khai]
+  A7[Chris Neumann]
+  A8[John Westworth]
+  A9[Jef Guo]
+  A10[Dominic Lau]
+  A11[Max dragon]
+  A12[Yui Mikuriya]
+  A13[Trisha Iamsakun]
+  A14[Marc Andrew]
+  A15[Ethan Harvey]
+  A16[Finlay McInnes]
+  A17[Sean Brennan]
+  A18[Jackson Thomas]
+  A19[Darrell Kopke]
+  A20[Kai Smart]
+  A21[Jason Peter Andrews]
+
+  A1 -->|From Eprojects page| A2
+  A1 -->|Follow up| A2
+  A1 -->|Waiting response| A3
+  A4 -->|Waiting response| A3
+  A5 -->|Follow up| A4
+  A6 -->|Follow up| A5
+  A7 -->|Follow up| A6
+  A8 -->|Waiting response| A7
+  A9 -->|Follow up| A8
+  A10 -->|From finlay| A9
+  A15 -->|Many guys in the frat| A10
+  A16 -->|E-Projects| A15
+  A17 -->|From that one UBC eprojects event| A16
+  A18 -->|Follow up| A17
+  A19 -->|From Eprojects page| A18
+  A20 -->|Bumped into him at a e projects boothing| A19
+  A21 -->|Random from linked in| A20
+
+  class A1 followup;
+  class A2 followup;
+  class A3 waiting;
+  class A4 waiting;
+  class A5 followup;
+  class A6 followup;
+  class A7 followup;
+  class A8 waiting;
+  class A9 followup;
+  class A10 followup;
+  class A11 followup;
+  class A12 followup;
+  class A13 followup;
+  class A14 followup;
+  class A15 followup;
+  class A16 followup;
+  class A17 waiting;
+  class A18 followup;
+  class A19 followup;
+  class A20 followup;
+  class A21 followup;
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const enableZoom = () => {
+        const svg = document.querySelector(".mermaid svg");
+        if (svg && !svg.getAttribute("data-panzoom")) {
+          svgPanZoom(svg, {
+            zoomEnabled: true,
+            controlIconsEnabled: true,
+            fit: true,
+            center: true
+          });
+        } else {
+          setTimeout(enableZoom, 100);
+        }
+      };
+      enableZoom();
+    });
+  </script>
+</body>
+</html>
